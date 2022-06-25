@@ -328,9 +328,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 0px 0px 0px 10px;
 
-  width: 88px;
+  width: 30%;
   height: 57px;
 
   border-radius: 5px 0px 0px 5px;
@@ -478,8 +477,129 @@
 }
 
 .page2 {
+  width: 100%;
+  margin-top: 135px;
   /* Inside auto layout */
   flex: none;
+  flex-grow: 0;
+}
+
+.page3 {
+  /* Hero Center */
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 135px 200px 0px;
+  gap: 50px;
+
+  position: relative;
+  width: 100%;
+  height: 1320px;
+
+  background: #FFFFFF;
+}
+
+.menu {
+  /* Menu */
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 20px;
+
+  width: 852.5px;
+  height: 50px;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.menuItem {
+  /* Frame 79 */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
+
+  width: 198.12px;
+  height: 50px;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.menuSelected {
+  /* title */
+
+  width: 97px;
+  height: 22px;
+
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 22px;
+  /* identical to box height, or 110% */
+
+  display: flex;
+  align-items: center;
+
+  /* gradient */
+
+  background: linear-gradient(104.92deg, #0085FF 3.32%, #EA6CFF 87.88%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  flex-grow: 0;
+}
+
+.menuUnselected {
+  /* title */
+  width: 71px;
+  height: 22px;
+
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 22px;
+  /* identical to box height, or 110% */
+
+  display: flex;
+  align-items: center;
+
+  /* Character/Title .85 */
+
+  color: rgba(0, 0, 0, 0.85);
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
   flex-grow: 0;
 }
 
