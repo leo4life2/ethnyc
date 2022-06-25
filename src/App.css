@@ -33,14 +33,6 @@
   padding-bottom: 12px;
 }
 
-.frame {
-    /* Auto layout */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-}
-
 .content {
   /* Content */
   /* Auto layout */
@@ -59,7 +51,6 @@
   /* Inside auto layout */
 
   flex: none;
-  order: 0;
   align-self: stretch;
   flex-grow: 0;
 }
@@ -94,7 +85,6 @@
   /* Inside auto layout */
 
   flex: none;
-  order: 0;
   flex-grow: 0;
 }
 
@@ -120,21 +110,18 @@
   /* Inside auto layout */
 
   flex: none;
-  order: 1;
   flex-grow: 0;
 }
 
 .topButton {
   /* Inside auto layout */
   flex: none;
-  order: 2;
   flex-grow: 0;
 }
 
 .trendingVote {
   /* Trending Vote */
 
-  width: 181px;
   height: 32px;
 
   font-family: 'SF Pro Text';
@@ -156,11 +143,345 @@
   /* Inside auto layout */
 
   flex: none;
-  order: 1;
   flex-grow: 0;
 }
 
+.voteCard {
+  /* vote card */
 
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+
+  width: 710px;
+  height: 284px;
+
+  background: #FFFFFF;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  flex-grow: 0;
+}
+
+.topVoteImg {
+  /* topVoteImg */
+  width: 284px;
+  height: 284px;
+
+  background: #eeeeee;
+  /* mix-blend-mode: normal; */
+  border-radius: 10px 0px 0px 10px;
+
+  /* Inside auto layout */
+  flex: none;
+  flex-grow: 0;
+}
+
+.rightPart {
+  /* right part */
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 10px;
+
+  width: 426px;
+  height: 284px;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.topCard {
+  /* top card */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px 10px 20px 20px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.cardTitle {
+  /* Vote for the protection of wildlife */
+  height: 34px;
+
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 140.62%;
+  /* identical to box height, or 34px */
+
+  display: flex;
+  align-items: center;
+
+  /* text gray */
+
+  color: #6F7D8A;
+
+  /* Inside auto layout */
+
+  flex: none;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.cardSubtitle {
+
+  width: 396px;
+  height: 63px;
+
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 140.62%;
+  /* or 21px */
+
+  display: flex;
+  align-items: center;
+
+  /* text gray */
+
+  color: #6F7D8A;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.bottomCard {
+  /* Bottom card */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px 10px 20px 20px;
+  gap: 3px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.progressBar {
+  /* progress bar */
+
+  box-sizing: border-box;
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 10px;
+
+  background-image: url("./assets/img/pbar.svg");
+  background-size:     cover;
+  background-repeat:   no-repeat;
+  background-position: center center;
+
+  width: 100%;
+
+  /* Inside auto layout */
+
+  flex: none;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.progressSection {
+  /* progress section */
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px 0px 0px 10px;
+
+  width: 88px;
+  height: 57px;
+
+  border-radius: 5px 0px 0px 5px;
+
+  /* gradient */
+
+  background: linear-gradient(104.92deg, #0085FF 3.32%, #EA6CFF 87.88%);
+
+  /* Inside auto layout */
+
+  flex: none;
+  flex-grow: 1;
+}
+
+.progressTitle {
+  /* Unique Votes */
+
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 10px;
+  line-height: 140.62%;
+  /* identical to box height, or 14px */
+
+  display: flex;
+  align-items: center;
+
+  transform: translate(10%, 70%);
+
+  color: #fff;
+
+  background: linear-gradient(104.92deg, #0085FF 3.32%, #EA6CFF 87.88%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 1px transparent;
+
+  position: absolute;
+  z-index:100;
+
+  /* Inside auto layout */
+  flex: none;
+  flex-grow: 0;
+}
+
+.progressCount {
+  /* 18939 */
+
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 140.62%;
+  /* or 28px */
+
+  display: flex;
+  align-items: center;
+
+  transform: translate(10%, 70%);
+
+  background: linear-gradient(104.92deg, #0085FF 3.32%, #EA6CFF 87.88%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 2px transparent;
+
+  color: #fff;
+
+  position: absolute;
+  z-index:100;
+
+  /* Inside auto layout */
+
+  flex: none;
+  flex-grow: 0;
+}
+
+.btnContainer {
+  /* btnContainer */
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 2px;
+
+  width: 396px;
+  height: 57px;
+
+  border-radius: 5px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.btn {
+  /* buttons */
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+
+  /* green */
+
+  background: #06D6A0;
+  border-radius: 5px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.btnText {
+  /* 1 */
+  width: 9px;
+  height: 23px;
+
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 140.62%;
+  /* identical to box height, or 22px */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #FFFFFF;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  flex-grow: 0;
+}
+
+.page2 {
+  /* Inside auto layout */
+  flex: none;
+  flex-grow: 0;
+}
 
 @keyframes animate-enter-frames {
   from{opacity: 0;
