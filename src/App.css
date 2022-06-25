@@ -1,38 +1,172 @@
-.App {
-  text-align: center;
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+/* The following line is used to measure usage of this code in production. For more info see our usage billing page */
+@import url("https://px.animaapp.com/62b0f78d7d7916b081a7793e.62b0f78d879be4463e9d11f9.cp5pOsd.rcp.png");
+
+@font-face {
+  font-family: "SF Pro Text-Semibold";
+  font-style: normal;
+  font-weight: 400;
+  src: url("assets/fonts/FontsFree-Net-SFProText-Semibold-1.ttf") format("truetype");
+}
+@font-face {
+  font-family: "SF Pro Text-Light";
+  font-style: normal;
+  font-weight: 300;
+  src: url("assets/fonts/SF-Pro-Text-Light.otf") format("opentype");
+}
+@font-face {
+  font-family: "SF Pro Text-Black";
+  font-style: normal;
+  font-weight: 900;
+  src: url("assets/fonts/SF-Pro-Text-Black.otf") format("opentype");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar {
+  align-items: center;
+  box-shadow: 0px 1px 0px #00000040;
+  justify-content: space-between;
+  display: flex;
+  height: 64px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.frame {
+    /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.content {
+  /* Content */
+  /* Auto layout */
+
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0px;
+  gap: 35px;
+
+  width: 100%;
+  height: 230px;
+
+  padding-top: 50px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.devoted-to-dem {
+  /* Devoted to democracy. */
+
+  width: 1399.79px;
+  height: 120px;
+
+  font-family: 'Avenir Next';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 96px;
+  line-height: 140.62%;
+  /* or 135px */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+  /* gradient */
+
+  background: linear-gradient(104.92deg, #0085FF 3.32%, #EA6CFF 87.88%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.subtitle {
+  /* Subtitle */
+
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140.62%;
+  /* identical to box height, or 25px */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* text gray */
+
+  color: #6F7D8A;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.topButton {
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+
+.trendingVote {
+  /* Trending Vote */
+
+  width: 181px;
+  height: 32px;
+
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 140.62%;
+  /* or 34px */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* text gray */
+
+  color: #6F7D8A;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+
+
+@keyframes animate-enter-frames {
+  from{opacity: 0;
+transform: translate(0, 25px);
+}
+to{opacity: 1;
+transform: translate(0,0);
+}
 }
