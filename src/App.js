@@ -1,10 +1,46 @@
 import React, { Component } from "react";
 import "./App.css";
 import logo from "./assets/img/Logo.svg"
+import bird from "./assets/img/bird.png"
 import startvote from "./assets/img/startvote.svg"
 import topButton from "./assets/img/topButton.svg"
-import bird from "./assets/img/bird.png"
 import page2 from "./assets/img/page2.svg"
+import Votecard from "./Votecard"
+
+const cardMockDatas = [
+  {
+    image: bird,
+    title: "Vote for the protection of wildlife",
+    subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, at volutpat arcu, ut odio montes. Sed integer lobortis massa nisi, posuere.",
+    count: 23541,
+    targetCount: 30000,
+    options: ["yes", "yes", "yes"]
+  },
+  {
+    image: bird,
+    title: "Vote for the protection of kingston",
+    subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, at volutpat arcu, ut odio montes. Sed integer lobortis massa nisi, posuere.",
+    count: 321551,
+    targetCount: 351551,
+    options: ["yes", "maybe", "no"]
+  },
+  {
+    image: bird,
+    title: "Vote for the protection of kavin",
+    subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, at volutpat arcu, ut odio montes. Sed integer lobortis massa nisi, posuere.",
+    count: 35132,
+    targetCount: 45132,
+    options: ["hi", "hello", "yes"]
+  },
+  {
+    image: bird,
+    title: "Vote for the protection of not tom",
+    subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, at volutpat arcu, ut odio montes. Sed integer lobortis massa nisi, posuere.",
+    count: 31314,
+    targetCount: 51314,
+    options: ["tom", "not", "tom"]
+  },
+]
 
 class App extends Component {
 
@@ -39,48 +75,28 @@ class App extends Component {
           <img className="topButton" src={topButton} />
           <span className="trendingVote"> Trending Vote </span>
 
-          <div className="voteCard">
-            <img src={bird} className="topVoteImg"/>
-            <div className="rightPart">
-
-              <div className="topCard">
-                <span className="cardTitle"> Vote for protection of wildlife </span>
-                <span className="cardSubtitle">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, at volutpat arcu, ut odio montes. Sed integer lobortis massa nisi, posuere.
-                </span>
-              </div>
-
-              <div className="bottomCard">
-                <div className="progressBar">
-                  <span className="progressTitle"> Unique Voters </span>
-                  <span className="progressCount"> 25000 </span>
-                  <div className="progressSection"></div>
-                </div>
-
-                <div className="btnContainer">
-                  <div className="btn">
-                    <span className="btnText"> 1 </span>
-                  </div>
-                  <div className="btn">
-                    <span className="btnText"> 2 </span>
-                  </div>
-                  <div className="btn">
-                    <span className="btnText"> 3 </span>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
+          <Votecard {...cardMockDatas[0]}/>
 
           <img src={page2} className="page2"/>
 
           <div className="page3">
             <div className="menu">
               <div className="menuItem">
-
+                <span className="menuSelected"> Featured </span>
+              </div>
+              <div className="menuItem">
+                <span className="menuUnselected"> Popular </span>
+              </div>
+              <div className="menuItem">
+                <span className="menuUnselected"> Recent </span>
+              </div>
+              <div className="menuItem">
+                <span className="menuUnselected"> Completed </span>
               </div>
             </div>
+
+            {cardMockDatas.map(data => <Votecard {...data}/>)}
+
           </div>
 
         </div>
