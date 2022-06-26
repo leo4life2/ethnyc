@@ -1,49 +1,52 @@
 import React, { Component } from "react";
 import "./App.css";
-import logo from "./assets/img/Logo.svg"
-import bird from "./assets/img/bird.png"
-import startvote from "./assets/img/startvote.svg"
-import topButton from "./assets/img/topButton.svg"
-import page2 from "./assets/img/page2.svg"
-import Votecard from "./Votecard"
+import logo from "./assets/img/Logo.svg";
+import bird from "./assets/img/bird.png";
+import startvote from "./assets/img/startvote.svg";
+import topButton from "./assets/img/topButton.svg";
+import page2 from "./assets/img/page2.svg";
+import Votecard from "./Votecard";
 
 const cardMockDatas = [
   {
     image: bird,
     title: "Vote for the protection of wildlife",
-    subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, at volutpat arcu, ut odio montes. Sed integer lobortis massa nisi, posuere.",
+    subtitle:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, at volutpat arcu, ut odio montes. Sed integer lobortis massa nisi, posuere.",
     count: 23541,
     targetCount: 30000,
-    options: ["yes", "yes", "yes"]
+    options: ["yes", "yes", "yes"],
   },
   {
     image: bird,
     title: "Vote for the protection of kingston",
-    subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, at volutpat arcu, ut odio montes. Sed integer lobortis massa nisi, posuere.",
+    subtitle:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, at volutpat arcu, ut odio montes. Sed integer lobortis massa nisi, posuere.",
     count: 321551,
     targetCount: 351551,
-    options: ["yes", "maybe", "no"]
+    options: ["yes", "maybe", "no"],
   },
   {
     image: bird,
     title: "Vote for the protection of kavin",
-    subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, at volutpat arcu, ut odio montes. Sed integer lobortis massa nisi, posuere.",
+    subtitle:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, at volutpat arcu, ut odio montes. Sed integer lobortis massa nisi, posuere.",
     count: 35132,
     targetCount: 45132,
-    options: ["hi", "hello", "yes"]
+    options: ["hi", "hello", "yes"],
   },
   {
     image: bird,
     title: "Vote for the protection of not tom",
-    subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, at volutpat arcu, ut odio montes. Sed integer lobortis massa nisi, posuere.",
+    subtitle:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, at volutpat arcu, ut odio montes. Sed integer lobortis massa nisi, posuere.",
     count: 31314,
     targetCount: 51314,
-    options: ["tom", "not", "tom"]
+    options: ["tom", "not", "tom"],
   },
-]
+];
 
 class App extends Component {
-
   constructor(props) {
     super(props);
     const {
@@ -65,19 +68,24 @@ class App extends Component {
     return (
       <div>
         <div className="navbar">
-          <img src={logo} alt="Logo"/>
-          <img src={startvote} alt="startvote"/>
+          <img src={logo} alt="Logo" />
+          <a href="https://developer.worldcoin.org/hosted/wid_staging_df3c180219556b16b0d643671f7b1110?signal={RequestedAccountCreation}">
+            <img src={startvote} alt="startvote" />
+          </a>
         </div>
 
         <div className="content">
           <span className="devoted-to-dem"> Devoted to democracy. </span>
-          <span className="subtitle"> Protect the power of your votes from being stolen by fake voters.</span>
+          <span className="subtitle">
+            {" "}
+            Protect the power of your votes from being stolen by fake voters.
+          </span>
           <img className="topButton" src={topButton} />
           <span className="trendingVote"> Trending Vote </span>
 
-          <Votecard {...cardMockDatas[0]}/>
+          <Votecard {...cardMockDatas[0]} />
 
-          <img src={page2} className="page2"/>
+          <img src={page2} className="page2" />
 
           <div className="page3">
             <div className="menu">
@@ -95,13 +103,11 @@ class App extends Component {
               </div>
             </div>
 
-            {cardMockDatas.map(data => <Votecard {...data}/>)}
-
+            {cardMockDatas.map((data) => (
+              <Votecard {...data} />
+            ))}
           </div>
-
         </div>
-
-
       </div>
     );
   }
