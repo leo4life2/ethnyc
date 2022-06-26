@@ -66,13 +66,15 @@ class Home extends Component {
   render() {
     return (
       <div className="snapper">
-        <div className="navbar">
+        <div className="navbarHome">
           <div className="logoBox">
             {/* <img src={logo} alt="Logo"/> */}
             <img src={icon} className="icon"/>
           </div>
           <div className="topright">
-            <img src={createvote} alt="createvote"/>
+            <a href="/create">
+              <img src={createvote} alt="createvote"/>
+            </a>
             <img src={unverified} alt="unverified"/>
           </div>
         </div>
@@ -80,9 +82,11 @@ class Home extends Component {
         <div className="content">
           <span className="devoted-to-dem"> Devoted to democracy. </span>
           <span className="subtitle"> Protect the power of your votes from being stolen by fake voters.</span>
-          <a href="#browse" id="back">
+
+          <div className="addFriendBox">
+            <input type="text" id="friend" className="addFriendText"></input>
             <img className="topButton" src={topButton} />
-          </a>
+          </div>
 
           <img src={page2} className="page2"/>
 

@@ -1,7 +1,8 @@
 .navbar {
   align-items: center;
+  background-color: #fff;
   box-shadow: 0px 1px 0px #00000040;
-  justify-content: space-between;
+  justify-content: center;
   display: flex;
   height: 64px;
   padding-left: 40px;
@@ -29,4 +30,348 @@
 .icon {
   width: 40px;
   height: 40px;
+}
+
+.container {
+  /* Create Vote */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px 50px 50px;
+  gap: 44px;
+
+  position: relative;
+  width: 100%;
+
+  /* bggray */
+
+  background: #F7FAFC;
+}
+
+.left {
+  /* left */
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 71px 44px;
+  gap: 10px;
+
+  width: 464px;
+  height: 668.38px;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  flex-grow: 0;
+}
+
+.right {
+  /* Box */
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 36px 30px 20px;
+  gap: 30px;
+
+  width: 800px;
+  height: 596.5px;
+
+  background: #FFFFFF;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  flex-grow: 0;
+}
+
+.textContainer {
+  /* Text */
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 11.57px;
+
+  width: 376px;
+  height: 140px;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  flex-grow: 0;
+}
+
+.uploadBox {
+
+  /* wrapper */
+
+
+  box-sizing: border-box;
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 117.5px 23.5px;
+  gap: 35.25px;
+
+  width: 376px;
+  height: 376.38px;
+
+  /* text gray */
+
+  border: 2px dashed #94A1AE;
+
+  /* Inside auto layout */
+
+  flex: none;
+  flex-grow: 0;
+}
+
+.textTitle {
+  /* Title */
+  width: 325px;
+  height: 21px;
+
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24.7981px;
+  line-height: 82.03%;
+  /* identical to box height, or 20px */
+
+  display: flex;
+  align-items: center;
+
+  color: #363135;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  flex-grow: 0;
+}
+
+.textSubtitle {
+  /* Title */
+  width: 384px;
+  height: 17px;
+
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20.6651px;
+  line-height: 82.03%;
+  /* identical to box height, or 17px */
+
+  display: flex;
+  align-items: center;
+
+  color: #7E7E7E;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  flex-grow: 0;
+}
+
+.uploadText {
+  /* Upload image */
+
+  width: 329px;
+  height: 65px;
+
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 65px;
+  /* identical to box height, or 215% */
+
+  text-align: center;
+
+  /* Character / Secondary .45 */
+
+  color: rgba(0, 0, 0, 0.45);
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.inputContainer {
+  /* input */
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0px;
+  gap: 28px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.inputBox {
+  /* vertical-form-item/input */
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+
+  width: 385px;
+  height: 86.75px;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  flex-grow: 0;
+}
+
+.textFieldBox {
+
+  box-sizing: border-box;
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 5px 15px;
+
+  width: 385px;
+  height: 41px;
+
+  /* text gray */
+
+  border: 1px solid #94A1AE;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.inputTitle {
+  /* description */
+  width: 385px;
+  height: 31px;
+
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19.25px;
+  line-height: 30px;
+  /* identical to box height, or 157% */
+
+
+  /* Character / Title .85 */
+
+  color: rgba(0, 0, 0, 0.85);
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.descriptionInputBox {
+  /* vertical-form-item/input */
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+
+  width: 740px;
+  height: 274px;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.descriptionBox {
+  /* placeholder */
+
+
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 5px 15px;
+
+    width: 740px;
+    height: 243px;
+
+    /* text gray */
+
+    border: 1px solid #94A1AE;
+
+    /* Inside auto layout */
+
+    flex: none;
+    align-self: stretch;
+    flex-grow: 1;
+}
+
+.createButton {
+  /* createButton */
+
+
+box-sizing: border-box;
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 9.56px;
+
+  border-radius: 5px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  align-self: stretch;
+  flex-grow: 0;
 }

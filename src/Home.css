@@ -37,7 +37,7 @@ html {
   behavior: 'smooth';
 }
 
-.navbar {
+.navbarHome {
   align-items: center;
   background-color: #1D1825;
   box-shadow: 0px 1px 0px #00000040;
@@ -212,6 +212,53 @@ html {
   background: #211F24;
 }
 
+.addFriendBox {
+  /* addfriendbox */
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 200px;
+
+  height: 60px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.addFriendText {
+  /* textinput */
+  box-sizing: border-box;
+
+  width: 500px;
+  height: 60px;
+
+  color: #F7FAFC;
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+
+  background: #211F24;
+  /* bggray */
+
+  border: 2px solid #F7FAFC;
+  border-radius: 5px 0px 0px 5px;
+
+  padding-left: 10px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
 .menu {
 /* Menu */
 /* Auto layout */
@@ -222,7 +269,6 @@ align-items: center;
 padding: 0px;
 gap: 20px;
 
-width: 852.5px;
 height: 52px;
 
 
