@@ -23,6 +23,8 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: #211F24;
+
 }
 
 * {
@@ -46,6 +48,30 @@ html {
   padding-right: 40px;
   padding-top: 12px;
   padding-bottom: 12px;
+}
+
+.topright {
+    /* verBut *
+  /* Auto layout */
+  margin-top: 17px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 2px 0px;
+  gap: 30px;
+
+  width: 205px;
+  height: 31px;
+
+  border-radius: 5px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
 }
 
 .logoBox {
@@ -72,6 +98,7 @@ html {
 .content {
   /* Content */
   /* Auto layout */
+  background-color: #211F24;
 
   display: flex;
   flex-direction: column;
@@ -80,7 +107,7 @@ html {
   gap: 35px;
 
   width: 100%;
-  height: 230px;
+  height: 7000;
 
   padding-top: 250px;
 
@@ -155,32 +182,6 @@ html {
   flex-grow: 0;
 }
 
-.trendingVote {
-  /* Trending Vote */
-
-  height: 32px;
-
-  font-family: 'SF Pro Text';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 140.62%;
-  /* or 34px */
-
-  display: flex;
-  align-items: center;
-  text-align: center;
-
-  /* text gray */
-
-  color: #6F7D8A;
-
-
-  /* Inside auto layout */
-
-  flex: none;
-  flex-grow: 0;
-}
 
 .page2 {
   width: 100%;
@@ -188,125 +189,105 @@ html {
   /* Inside auto layout */
   flex: none;
   flex-grow: 0;
+  background-color: #211F24;
+
 }
 
 .page3 {
   /* Hero Center */
+
+
   /* Auto layout */
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 135px 0px 0px;
+  padding: 135px 200px 0px;
   gap: 50px;
-  justify-content: center;
 
   position: relative;
-  width: 100%;
-  height: 1320px;
+  width: 1252.5px;
+  height: 100%;
 
-  background: #FFFFFF;
+  background: #211F24;
 }
 
 .menu {
-  /* Menu */
-  /* Auto layout */
+/* Menu */
+/* Auto layout */
 
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0px;
-  gap: 20px;
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 20px;
 
-  width: 852.5px;
-  height: 50px;
+width: 852.5px;
+height: 52px;
 
 
-  /* Inside auto layout */
+/* Inside auto layout */
 
-  flex: none;
-  flex-grow: 0;
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
 }
 
 .menuItem {
-  /* Frame 79 */
-
-  /* Auto layout */
-
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0px;
-  gap: 10px;
-
-  width: 198.12px;
-  height: 50px;
+/* Frame 79 */
 
 
-  /* Inside auto layout */
+/* Auto layout */
 
-  flex: none;
-  align-self: stretch;
-  flex-grow: 1;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+width: 852.5px;
+height: 52px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 1;
 }
 
 .menuSelected {
-  /* title */
+/* title */
+width: 512px;
+height: 52px;
 
-  width: 97px;
-  height: 22px;
+font-family: 'SF Pro Text';
+font-style: normal;
+font-weight: 900;
+font-size: 40px;
+line-height: 22px;
+/* or 55% */
 
-  font-family: 'SF Pro Text';
-  font-style: normal;
-  font-weight: 900;
-  font-size: 20px;
-  line-height: 22px;
-  /* identical to box height, or 110% */
+display: flex;
+align-items: center;
 
-  display: flex;
-  align-items: center;
+/* gradient */
 
-  /* gradient */
-
-  background: linear-gradient(104.92deg, #0085FF 3.32%, #EA6CFF 87.88%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-
-
-  /* Inside auto layout */
-
-  flex: none;
-  flex-grow: 0;
-}
-
-.menuUnselected {
-  /* title */
-  width: 71px;
-  height: 22px;
-
-  font-family: 'SF Pro Text';
-  font-style: normal;
-  font-weight: 300;
-  font-size: 20px;
-  line-height: 22px;
-  /* identical to box height, or 110% */
-
-  display: flex;
-  align-items: center;
-
-  /* Character/Title .85 */
-
-  color: rgba(0, 0, 0, 0.85);
+background: linear-gradient(104.92deg, #0085FF 3.32%, #EA6CFF 87.88%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
 
 
-  /* Inside auto layout */
+/* Inside auto layout */
 
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+flex: none;
+order: 0;
+flex-grow: 0;
 }
 
 @keyframes animate-enter-frames {

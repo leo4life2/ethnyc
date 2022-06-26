@@ -27,7 +27,7 @@ class Votecard extends Component {
 
             <div className="bottomCard">
               <div className="progressBar">
-                <span className="progressTitle"> Unique Voters </span>
+                <span className="progressTitle"> Progress </span>
                 <span className="progressCount"> {String(this.count) + "/" + String(this.targetCount)} </span>
                 <div className="progressSection" style={{width: String(this.count/this.targetCount * 100) + "%"}}></div>
               </div>

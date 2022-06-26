@@ -11,9 +11,9 @@
   width: 710px;
   height: 284px;
 
-  background: #FFFFFF;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+  border: 1px solid #5C5C5C;
 
   /* Inside auto layout */
 
@@ -90,7 +90,7 @@
 
   /* text gray */
 
-  color: #6F7D8A;
+  color: #FFFFFF;
 
   /* Inside auto layout */
 
@@ -100,28 +100,26 @@
 }
 
 .cardSubtitle {
-
-  width: 396px;
-  height: 63px;
-
+  width: 400.48px;
+  height: 75px;
+  
   font-family: 'SF Pro Text';
   font-style: normal;
-  font-weight: 300;
-  font-size: 15px;
+  font-weight: 400;
+  font-size: 18.0106px;
   line-height: 140.62%;
-  /* or 21px */
-
+  /* or 25px */
+  
   display: flex;
   align-items: center;
-
-  /* text gray */
-
-  color: #6F7D8A;
-
-
+  
+  color: #828282;
+  
+  
   /* Inside auto layout */
-
+  
   flex: none;
+  order: 1;
   align-self: stretch;
   flex-grow: 0;
 }
@@ -136,6 +134,7 @@
   align-items: flex-start;
   padding: 0px 10px 20px 20px;
   gap: 3px;
+
 
   /* Inside auto layout */
 
@@ -202,7 +201,7 @@
   font-family: 'SF Pro Text';
   font-style: normal;
   font-weight: 900;
-  font-size: 10px;
+  font-size: 9px;
   line-height: 140.62%;
   /* identical to box height, or 14px */
 

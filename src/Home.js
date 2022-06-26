@@ -3,7 +3,8 @@ import "./Home.css";
 import logo from "./assets/img/Logo.svg"
 import icon from "./assets/img/icon.png"
 import bird from "./assets/img/bird.png"
-import startvote from "./assets/img/startvote.svg"
+import createvote from "./assets/img/createvote.svg"
+import unverified from "./assets/img/unverified.svg"
 import topButton from "./assets/img/topButton.svg"
 import page2 from "./assets/img/page2.svg"
 import Votecard from "./Votecard"
@@ -64,14 +65,16 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
+      <div className="snapper">
         <div className="navbar">
           <div className="logoBox">
-            <img src={logo} alt="Logo"/>
+            {/* <img src={logo} alt="Logo"/> */}
             <img src={icon} className="icon"/>
           </div>
-
-          <img src={startvote} alt="startvote"/>
+          <div className="topright">
+            <img src={createvote} alt="createvote"/>
+            <img src={unverified} alt="unverified"/>
+          </div>
         </div>
 
         <div className="content">
@@ -86,19 +89,9 @@ class Home extends Component {
           <div className="page3">
 
             <a id="browse"></a>
-
             <div className="menu">
               <div className="menuItem">
-                <span className="menuSelected"> Featured </span>
-              </div>
-              <div className="menuItem">
-                <span className="menuUnselected"> Popular </span>
-              </div>
-              <div className="menuItem">
-                <span className="menuUnselected"> Recent </span>
-              </div>
-              <div className="menuItem">
-                <span className="menuUnselected"> Completed </span>
+                <span className="menuSelected"> Followed Ongoing Votes </span>
               </div>
             </div>
 
