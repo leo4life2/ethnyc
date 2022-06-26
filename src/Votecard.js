@@ -33,7 +33,7 @@ class Votecard extends Component {
               </div>
 
               <div className="btnContainer">
-                {this.options.map(opt => <div className="btn"> <span className="btnText"> {opt} </span> </div>)}
+                {this.options.map(opt => <div className="btn" key={this.title + opt}> <span className="btnText"> {opt} </span> </div>)}
               </div>
             </div>
 

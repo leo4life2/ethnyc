@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -20,7 +21,9 @@ const firstPageData = {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App {...firstPageData}/>
+    <BrowserRouter>
+      <App {...firstPageData}/>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
