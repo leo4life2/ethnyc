@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import logo from "./assets/img/Logo.svg"
+import icon from "./assets/img/icon.png"
 import bird from "./assets/img/bird.png"
 import startvote from "./assets/img/startvote.svg"
 import topButton from "./assets/img/topButton.svg"
@@ -65,7 +66,11 @@ class App extends Component {
     return (
       <div>
         <div className="navbar">
-          <img src={logo} alt="Logo"/>
+          <div className="logoBox">
+            <img src={logo} alt="Logo"/>
+            <img src={icon} className="icon"/>
+          </div>
+
           <img src={startvote} alt="startvote"/>
         </div>
 

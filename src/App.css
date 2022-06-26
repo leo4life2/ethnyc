@@ -33,6 +33,27 @@
   padding-bottom: 12px;
 }
 
+.logoBox {
+  /* Logo */
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 5px;
+  /* Inside auto layout */
+
+  flex: none;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+}
+
 .content {
   /* Content */
   /* Auto layout */
