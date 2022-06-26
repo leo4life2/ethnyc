@@ -356,10 +356,15 @@
 .createButton {
   /* createButton */
 
-
-box-sizing: border-box;
+  box-sizing: border-box;
 
   /* Auto layout */
+
+  background: url(./assets/img/createButton.svg) no-repeat;
+  cursor:pointer;
+  border: none;
+
+  height: 60px;
 
   display: flex;
   flex-direction: row;

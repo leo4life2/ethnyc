@@ -1,26 +1,10 @@
-import React, { Component } from "react";
-import "./Home.css";
-import logo from "./assets/img/Logo.svg"
-import icon from "./assets/img/icon.png"
-import bird from "./assets/img/bird.png"
-import createvote from "./assets/img/createvote.svg"
-import unverified from "./assets/img/unverified.svg"
-import topButton from "./assets/img/topButton.svg"
-import page2 from "./assets/img/page2.svg"
-import Votecard from "./Votecard"
-
-import useKernelAuth from './useKernelAuth';
-
-import { useSearchParams } from 'react-router-dom';
 import { useState, useEffect, useReducer } from 'react';
 import { FeedDAC, IdentityDAC, ProfileDAC, SocialDAC } from 'skynet-dacs-library';
 import { getSkylinkUrlForPortal, SkynetClient } from 'skynet-js';
 import _ from 'lodash'
 
-global.postsLoaded = [];
-
 // Used in AuthButton.js
-const useProfile = (userAuthStatus, isKernelLoaded) => {
+export const useProfile = (userAuthStatus, isKernelLoaded) => {
 
   const [userProfile, setUserProfile] = useState();
   const [avatar, setAvatar] = useState();
@@ -50,8 +34,6 @@ const useProfile = (userAuthStatus, isKernelLoaded) => {
       }
     };
 
-    console.log("3 params in useProfile: " + userAuthStatus, isKernelLoaded);
-
     if (userAuthStatus && isKernelLoaded) {
       getUserID();
     }
@@ -62,7 +44,7 @@ const useProfile = (userAuthStatus, isKernelLoaded) => {
 
 // helper method for getting user's profile avatarURL given userId
 // used in Hacker.js, where it maintains list and state
-const getUserAvatar = async (userID) => {
+export const getUserAvatar = async (userID) => {
 
   let profileDAC = new ProfileDAC();
   const result = await profileDAC.getProfile(userID);
@@ -70,7 +52,7 @@ const getUserAvatar = async (userID) => {
 };
 
 // Used in Hackers.js
-const followUserList = async (userIds, extKey, extValue) => {
+export const followUserList = async (userIds, extKey, extValue) => {
   // mock void return
   return;
 
@@ -89,7 +71,7 @@ const followUserList = async (userIds, extKey, extValue) => {
 // Used in IdeaFeed.js
 // Notice we handle state and list iteration here, unlike
 // the standalone function of getUserAvatar and it use in Hackers.js
-const useIdeasFeed = (userAuthStatus, isKernelLoaded) => {
+export const useIdeasFeed = (userAuthStatus, isKernelLoaded) => {
   // Mock data to be replaced by DAC data
   // return {
   //   ideasList: mockIdeas,
@@ -162,15 +144,14 @@ const useIdeasFeed = (userAuthStatus, isKernelLoaded) => {
       try {
         let identityDAC = new IdentityDAC();
         const loggedInUser = await identityDAC.userID();
-        const userList = [...hackerUserIds, loggedInUser];
+        const userList = [...hackerUserIds, loggedInUser ];
 
         let feedDAC = new FeedDAC();
 
         for (const userId of userList) {
           console.log('loading posts for user: ', userId);
           const posts = await feedDAC.loadPostsForUser(userId);
-          console.log("posts for user: " + userId + " is " + posts);
-          global.postsLoaded.push(posts);
+          console.log(posts);
           const ideas = posts.filter((post)=> post?.content?.ext?.wc)
           // const ideas = posts;
           dispatchIdeasList({ posts: ideas, userId });
@@ -192,6 +173,40 @@ const useIdeasFeed = (userAuthStatus, isKernelLoaded) => {
   };
 };
 
+//method for creating a post tailored to our app using FeedDAC
+// take form data and call FeedDAC's createPost
+// Used in NewIdeaCard.js
+export const createPost = async ({
+  title,
+  text,
+  event,
+  prizeTrack,
+  techStack,
+  seekingTeam,
+}) => {
+
+  //mock return
+  // return;
+
+  const feedDAC = new FeedDAC();
+
+  const post = {
+    title,
+    text,
+    ext: { event, prizeTrack, techStack, seekingTeam, wc: "1.0.0" },
+  };
+
+  console.log(post);
+
+  let result;
+  try {
+    result = await feedDAC.createPost(post);
+    console.log('Result: ', result);
+  } catch (error) {
+    console.error({ error });
+  }
+};
+
 const SKYNET_PORTAL = 'https://siasky.net';
 
 // current Skynet Kernel doesn't handle downloading dataurls or creating preferred portal URLs
@@ -204,7 +219,7 @@ const avatarFieldToUrl = (avatar) => {
   }
 };
 
-const addFriend = () => {
+export const addFriend = () => {
   const socialDAC = new SocialDAC();
   SocialDAC.follow(document.getElementById("friendInput").value);
   // hackerUserIds.push(document.getElementById("friendInput").value);
@@ -217,119 +232,13 @@ const addFriend = () => {
 // Used for useIdeaFeed and in Hackers.js
 
 const socialDAC = new SocialDAC();
-const hackerUserIds = [
-  "110b5e276e9f86a84e730307a71882f70e16310a4a088e05608163ac147b0e45"
+export const hackerUserIds = [
+  // '4235b7d3928b2a1946bdbc807de3fc52827f382ee1c4637dfeea4217347b8bff',
+  // 'c012eb2d458162fe4d3f18b88f5b1e5468e4a2f88e3f43d00c9de2b66d73df77',
+  // "c360b6045bc243eb0cdf483f461faafa123cd06a9295c490220ea850938b6c6e", // newer source userid
+  // 'c6905fbde67575a8fbcb7c229a4f1169f2a35a29721802408fd227b103e789e6', //Delivator test
+  // '050da969ae6761f8b6a92ab4e9ef587d8f12deaf8c1c07487711bd989320e55d', //Skunk_Ink test
+  // '93d487d5211d826c09e7faf56ca5e092d67dc7e8b9017e1d336eaeaf16e65236', //redsolver
+  // 'c3e1e5f4d032f931a91c1f396fa2ceb7347dbf80fe8b7360aa91bd6d4336da48', // Demo User, 2 idea, username and avatar
+  // 'bce426a6fc75204ea4e3edb4093090309a6d16e1442766fa12925f9a94d4e7b6', //Demo User with 2 Ideas
 ];
-
-
-const cardMockDatas = [
-  {
-    image: bird,
-    title: "Vote for the protection of wildlife",
-    subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, at volutpat arcu, ut odio montes. Sed integer lobortis massa nisi, posuere.",
-    count: 23541,
-    targetCount: 10,
-    options: ["yes", "no", "maybe"]
-  },
-  {
-    image: bird,
-    title: "Vote for the protection of kingston",
-    subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, at volutpat arcu, ut odio montes. Sed integer lobortis massa nisi, posuere.",
-    count: 321551,
-    targetCount: 20,
-    options: ["yes", "maybe", "no"]
-  }
-]
-
-const Home = (props) => {
-
-  const [searchParams, setSearchParams] = useSearchParams();
-  let WCsuccess = searchParams.get("success");
-  console.log("has success: " + WCsuccess);
-
-  if (!WCsuccess) {
-    window.location.href = "https://developer.worldcoin.org/hosted/wid_f1bbc7a8f2d16ee19396b5ab60e08382?signal=%7ByourSignal%7D"
-  }
-
-  const { userAuthStatus, bootloaderLoaded, isKernelLoaded } = useKernelAuth();
-  console.log("3 params: " + userAuthStatus, bootloaderLoaded, isKernelLoaded);
-  useProfile(userAuthStatus, isKernelLoaded);
-  useIdeasFeed(userAuthStatus, isKernelLoaded);
-
-  console.log("getting posts here");
-  console.log(global.postsLoaded);
-
-  let allPostsFormatted = []
-
-  for (const postArr of global.postsLoaded) {
-    for (const post of postArr) {
-
-      console.log("loaded post: ");
-      console.log(post);
-
-      var count = 0;
-      if (post.content.text != null) {
-        count = post.content.text.charCodeAt(0);
-      } else {
-        count = post.content.title.charCodeAt(0);
-      }
-
-      allPostsFormatted.push({
-        image: bird,
-        title: post.content.title,
-        subtitle: post.content.text,
-        count: post.content.title.charCodeAt(0),
-        targetCount: post.content.title.charCodeAt(0),
-        options: ["Yes", "Maybe", "No"]
-      });
-
-    }
-  }
-
-    return (
-      <div className="snapper">
-        <div className="navbarHome">
-          <div className="logoBox">
-            {/* <img src={logo} alt="Logo"/> */}
-            <img src={icon} className="icon"/>
-          </div>
-          <div className="topright">
-            <a href="/create">
-              <img src={createvote} alt="createvote"/>
-            </a>
-          </div>
-        </div>
-
-        <div className="content">
-          <span className="devoted-to-dem"> Devoted to democracy. </span>
-          <span className="subtitle"> Protect the power of your votes from being stolen by fake voters.</span>
-
-          <div className="addFriendBox">
-            <input type="text" id="friend" className="addFriendText"></input>
-            <img className="topButton" onClick={() => alert("Friend Added!")} src={topButton} />
-          </div>
-
-          <img src={page2} className="page2"/>
-
-          <div className="page3">
-
-            <a id="browse"></a>
-            <div className="menu">
-              <div className="menuItem">
-                <span className="menuSelected"> Followed Ongoing Votes </span>
-              </div>
-            </div>
-
-            {allPostsFormatted.map(data => <Votecard key={data.title} {...data}/>)}
-
-          </div>
-
-        </div>
-
-
-      </div>
-    );
-
-}
-
-export default Home;

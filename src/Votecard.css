@@ -102,22 +102,22 @@
 .cardSubtitle {
   width: 400.48px;
   height: 75px;
-  
+
   font-family: 'SF Pro Text';
   font-style: normal;
   font-weight: 400;
   font-size: 18.0106px;
   line-height: 140.62%;
   /* or 25px */
-  
+
   display: flex;
   align-items: center;
-  
+
   color: #828282;
-  
-  
+
+
   /* Inside auto layout */
-  
+
   flex: none;
   order: 1;
   align-self: stretch;
@@ -157,6 +157,8 @@
   padding: 0px;
   gap: 10px;
 
+  overflow: hidden;
+
   background-image: url("./assets/img/pbar.svg");
   background-size:     cover;
   background-repeat:   no-repeat;
@@ -183,7 +185,7 @@
   width: 30%;
   height: 57px;
 
-  border-radius: 5px 0px 0px 5px;
+  border-radius: 5px;
 
   /* gradient */
 
@@ -293,6 +295,8 @@
 
   background: #06D6A0;
   border-radius: 5px;
+
+  cursor: pointer;
 
   /* Inside auto layout */
 
