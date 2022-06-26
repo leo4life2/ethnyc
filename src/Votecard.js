@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import "./Votecard.css";
+import bird from "./assets/img/bird.png"
 
 class Votecard extends Component {
 
   constructor(props) {
     super(props);
-    this.image = props.image;
+    this.image = bird;
     this.title = props.title;
-    this.subtitle = props.subtitle;
-    this.count = props.count;
+    this.subtitle = props.text;
+    this.count = 0;
     this.options = props.options;
     this.targetCount = props.targetCount;
     this.state = {};
